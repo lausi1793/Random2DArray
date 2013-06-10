@@ -1,0 +1,44 @@
+package lausegger.randomarray;
+
+import java.util.Random;
+
+public class RandomArray {
+  private static int[][] a = new int[3][4];
+	private static int[][] qA = new int[3][3];
+	static Random r = new Random();
+	
+	/**
+	 * @param args
+	 * @author Michael Lausegger
+	 */
+   
+	public static void fillArray(int[][] b, int min, int max){
+		for (int i = 0; i < b.length; i++) {
+			for (int j = 0; j < b[i].length; j++){
+				b[i][j] = r.nextInt(max - min + 1) + min;
+			}
+		}
+	}
+	
+	public static void printArray(int[][] b) {
+		for (int i = 0; i < b.length; i++) {
+			for (int j = 0; j < b[i].length; j++){
+				System.out.print(b[i][j] + " ");
+			}
+			System.out.println();
+		}	
+	}
+	
+	
+	public static void main(String[] args) {
+		printArray(a);
+		fillArray(a, 10, 20);
+		printArray(a);
+		fillArray(qA, 10, 20);
+		printArray(qA);
+
+	}
+
+}
+
+
